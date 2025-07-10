@@ -1,0 +1,54 @@
+#skills-sec{
+    width: $w-100;
+    padding: 100px 0 70px 0;
+    position: relative;
+    overflow: hidden;
+    &::after{
+        height: 116%;
+        content: "";
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        top: -100px;
+        background-image: url(./../../food-templat/images/cake-bg.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .our-skill{
+        margin-bottom: 70px;
+        width: $w-100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2{
+            @include sec-h2;
+            color:#222;
+            margin-bottom: 10px;
+        }
+        p{
+            @include sec-p;
+        }
+    }
+    .skill-progress{
+        width: $w-100;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        h2{
+            font-weight: 600;
+            font-size: 90px;
+            line-height: 90px;
+            color: #5fcac7;
+            span{
+                font-size: 50px;
+                font-weight: 700;
+                margin-left: -14px;
+            }
+        }
+        p{
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+}

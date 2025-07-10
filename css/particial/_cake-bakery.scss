@@ -1,0 +1,125 @@
+#cake-bakery {
+  width: $w-100;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  &::before{
+    height: 140%;
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    top: -180px;
+    transform: rotateY(180deg);
+    background-image: url(./../../food-templat/images/cake-bg.jpg);
+    background-size: 100%;
+    background-repeat: repeat-y;
+  }
+  .inner-sec {
+    width: $w-100;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
+    .bakery-box {
+      width: auto;
+      .bakery-img {
+        position: relative;
+        width: 100%;
+        display: block;
+        padding: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        background-color: #fff;
+        cursor: pointer;
+        img {
+          display: block;
+          max-width: 169px;
+          transition: 0.5s;
+        }
+        &::after {
+          opacity: 0;
+          position: absolute;
+          left: 50%;
+          top: 0;
+          content: "bacary";
+          transform: translateX(-50%);
+          font-weight: 400;
+          color: #fff;
+          background-color: #5fcac7;
+          font-size: 14px;
+          padding: 2px 15px;
+          transition: 0.5s;
+          z-index: 99;
+        }
+        &:hover::after {
+          opacity: 1;
+          transform: translateY(-50px);
+          left: 50px;
+        }
+        &:hover img {
+          transform: rotateY(360deg);
+        }
+      }
+    }
+  }
+  .blog-sec {
+    width: $w-100;
+    .blog-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h2 {
+        color: $black !important;
+        @include sec-h2;
+        margin-bottom: 10px;
+      }
+      p {
+        @include sec-p;
+      }
+    }
+    .blog-posts {
+      margin-top: 70px;
+      width: $w-100;
+      display: flex;
+      gap: 30px;
+      .blog {
+        width: calc(33.33% - 20px);
+        background-color: $white;
+        box-shadow: 0 10px 40px 0 rgba(0,0,0,.1);
+        cursor: pointer;
+        figure {
+          width: 100%;
+          img {
+            width: 100%;
+            display: block;
+          }
+        }
+        .body-post {
+          width: $w-100;
+          padding: 20px;
+          h2 {
+            color: #222;
+            font-family: Amita, sans-serif;
+            font-size: 22px;
+            line-height: 32px;
+            margin-bottom: 10px;
+            transition: 0.4s;
+            &:hover{
+                color: $theme-color;
+            }
+          }
+          .folder{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            i{
+                color: $theme-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

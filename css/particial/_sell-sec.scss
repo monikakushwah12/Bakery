@@ -1,0 +1,132 @@
+#sell-sec {
+  width: 100%;
+  padding: 100px 0 120px 0;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transform: rotate(180deg);
+    top: -19px;
+    background-size: 100px;
+    background-repeat: repeat-x;
+    background-image: url(./../../food-templat/images/shape.png);
+    height: 20px;
+    width: 100%;
+    z-index: 9;
+  }
+  &::before {
+    height: 100%;
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    top: 0px;
+    background-image: url(./../../food-templat/images/sell-bg.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .sell-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    .sell-left {
+      width: calc(50% - 20px);
+      .selling-text {
+        h2 {
+          color: #222 !important;
+          @include sec-title;
+        }
+        p {
+          font-weight: 500;
+          color: #aaa;
+          font-size: 18px;
+          line-height: 30px;
+          position: relative;
+          &::after {
+            position: absolute;
+            left: 0;
+            content: "";
+            width: 60px;
+            height: 4px;
+            background: #5fcac7 !important;
+            bottom: -20px;
+          }
+        }
+        margin-bottom: 60px;
+      }
+      .s-selling-content {
+        p {
+          line-height: 26px;
+          margin-bottom: 24px;
+          color: #000;
+        }
+        a {
+          margin-top: 52px;
+          @include btns;
+          i {
+            padding-right: 10px;
+          }
+        }
+      }
+    }
+    .sell-right {
+      width: calc(50% - 20px);
+      .inner-sec {
+        width: 100%;
+        .tab-header {
+          margin-bottom: 10px;
+          @include tbheader;
+        }
+        .tab-content {
+        display: none;
+          padding: 20px;
+          ul.country-names {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            li {
+              list-style: none;
+              width: 33.33%;
+              i {
+                padding-right: 20px;
+                color: #5fcac7;
+              }
+              a {
+                text-decoration: none;
+                color: #000;
+                font-size: 14px;
+              }
+            }
+          }
+          p{
+            line-height: 26px;
+            margin-bottom: 24px;
+          }
+          .con-img{
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            img{
+              width: calc(55% - 10px);
+            }
+            span{
+              width: calc(45% - 10px);
+              line-height: 26px;
+            }
+            p{
+              width: 100%;
+              line-height: 26px;
+            }
+          }
+        }
+      }
+      .inner-sec.active .tab-content {
+       display: block;
+      }
+    }
+  }
+}

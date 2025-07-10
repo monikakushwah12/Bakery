@@ -1,0 +1,126 @@
+#bakery {
+  width: $w-100;
+  margin-top: -90px;
+  margin-bottom: 100px;
+  position: relative;
+  &::before {
+    height: 90%;
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    top: 190px;
+    background-image: url(./../../food-templat/images/cake-bg.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  
+
+  .bakery-sec {
+    width: $w-100;
+    display: flex;
+    gap: 30px;
+    .bakery-box {
+      width: calc(25% - 22.5px);
+      border-radius:8px 8px 0 0;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      transition: 0.4s;
+      cursor: pointer;
+      figure {
+        width: 100%;
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+      .bakery-content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        bottom: 40px;
+        h2 {
+          font-size: 28px;
+          line-height: 40px;
+          font-weight: 700;
+          font-family: Amita, sans-serif;
+          color: #fff;
+        }
+        p {
+          color: #fff;
+          margin-bottom: 45px;
+          font-size: 14px;
+          position: relative;
+          &::after {
+            content: "";
+            width: 60px;
+            height: 4px;
+            background: #5fcac7 !important;
+            bottom: -20px;
+            position: absolute;
+            transform: translateX(-50%);
+            left: 50%;
+          }
+        }
+        .bakery-btn {
+          a {
+            @include btns;
+          }
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 50%;
+        width: 100%;
+        background-image: linear-gradient(0deg, #001817, rgba(0, 24, 23, 0));
+      }
+      &:hover {
+        transform: skewX(2deg) scale(1.1);
+      }
+    }
+  }
+  .cake-sec {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    figure {
+      max-width: 110px;
+      img {
+        width: 100%;
+      }
+    }
+    h2 {
+      @include sec-h2;
+    }
+    p {
+      font-size: 28px;
+      line-height: 52px;
+      font-weight: 300;
+      color: #222;
+      text-align: center;
+      max-width: 1110px;
+      strong {
+        border-bottom: dashed 1px #000;
+      }
+    }
+    p + p {
+      margin-top: 30px;
+      @include sec-p;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #222;
+      }
+    }
+  }
+}
